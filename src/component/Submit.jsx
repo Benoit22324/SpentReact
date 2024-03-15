@@ -6,9 +6,10 @@ const Submit = () => {
     const add = () => {
         if (state.inputvalue !== '' && state.inputcat !== '') {
             const date = new Date()
-            const current = `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} à ${date.getHours()}h`;
+            const currentdate = `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
+            const currenttime = `${date.getHours()}h ${date.getMinutes()}m`
         
-            dispatch({type: 'addSpent', payload: current})
+            dispatch({type: 'addSpent', payload: {date: currentdate, time: currenttime}})
         }
         else if (state.inputvalue === '' && state.inputcat !== '') dispatch({type: 'setError', payload: 'Veuillez saisir un montant'})
         else if (state.inputvalue !== '' && state.inputcat === '') dispatch({type: 'setError', payload: 'Veuillez choisir une catégorie'})
@@ -17,7 +18,7 @@ const Submit = () => {
 
     return (
         <>
-            <button onClick={add}>Ajouter</button>
+            <button onClick={add} className="form_submitButton">Ajouter</button>
         </>
     )
 }

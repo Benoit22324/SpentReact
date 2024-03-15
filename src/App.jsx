@@ -1,12 +1,15 @@
 import Form from "./component/Form"
 import History from "./component/History"
+import './App.css'
 
 function App() {
 
   return (
     <>
-      <Form />
-      <History />
+      <div className="app">
+        <Form />
+        <History />
+      </div>
     </>
   )
 }

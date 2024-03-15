@@ -30,7 +30,7 @@ const SpentReducer = (state, action) => {
 
         case 'addSpent': return {
             ...state,
-            entry: [...state.entry, {value: state.inputvalue, cat: state.inputcat, date: action.payload}],
+            entry: [...state.entry, {value: state.inputvalue, cat: state.inputcat, date: action.payload.date, time: action.payload.time}],
             total: state.total + parseFloat(state.inputvalue),
             inputvalue: '',
         }

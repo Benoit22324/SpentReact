@@ -9,16 +9,18 @@ const HistoryCat = () => {
 
     return (
         <>
-            <select name={'cathistory'} value={state.hcat} onChange={update}>
-                <option value={''}>Tout</option>
-                <option value={'alim'}>Alimentation</option>
-                <option value={'loge'}>Logement</option>
-                <option value={'trans'}>Transport</option>
-                <option value={'div'}>Divertissement</option>
-                <option value={'san'}>Santé</option>
-                <option value={'edu'}>Éducation</option>
-                <option value={'other'}>Autres</option>
-            </select>
+            <label>Trié par :
+                <select name={'cathistory'} value={state.hcat} onChange={update} className="form_selectButton">
+                    <option value={''}>Tout</option>
+                    <option value={'alim'}>Alimentation</option>
+                    <option value={'loge'}>Logement</option>
+                    <option value={'trans'}>Transport</option>
+                    <option value={'div'}>Divertissement</option>
+                    <option value={'san'}>Santé</option>
+                    <option value={'edu'}>Éducation</option>
+                    <option value={'other'}>Autres</option>
+                </select>
+            </label>
         </>
     )
 }

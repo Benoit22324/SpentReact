@@ -15,19 +15,28 @@ const History = () => {
 
     return (
         <>
-            <HistoryCat />
-            <p>Montant total: {state.cattot}€ /{state.catentry.length > 1 ? <span>{state.catentry.length} dépenses</span> : <span>{state.catentry.length} dépense</span>}</p>
-            {
-                state.entry.length !== 0 ?
-                    state.catentry.length !== 0 ?
-                    state.catentry.map((item, i) =>
-                        <div key={i}>Montant: {item.value}€, le {item.date}</div>
-                    )
+            <div className="history">
+                <HistoryCat />
+                {
+                    state.entry.length !== 0 ?
+                        state.catentry.length !== 0 ? 
+                        <table className="history_table">
+                            <thead>
+                                <tr><td>Montant</td> <td>Date</td> <td>Time</td></tr>
+                            </thead>
+                            <tbody>
+                            {state.catentry.map((item, i) =>
+                                <tr key={i}><td>{item.value}€</td> <td>{item.date}</td> <td>{item.time}</td></tr>
+                            )}
+                            <tr className="history_table_tot"><td colSpan={2}>Montant total</td> <td>{state.cattot}€ /{state.catentry.length > 1 ? <span>{state.catentry.length} dépenses</span> : <span>{state.catentry.length} dépense</span>}</td></tr>
+                            </tbody>
+                        </table>
+                        :
+                        <p>Aucun montant saisie dans cette catégorie</p>
                     :
-                    <p>Aucun montant saisie dans cette catégorie</p>
-                :
-                <p>Aucun montant saisie pour l'instant</p>
-            }
+                    <p>Aucun montant saisie pour l'instant</p>
+                }
+            </div>
         </>
     )
 }

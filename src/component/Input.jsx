@@ -10,7 +10,9 @@ const Input = () => {
 
     return (
         <>
-            <input type='text' value={state.inputvalue} onChange={updateValue}/>
+            <label>Montant:
+                <input type='text' value={state.inputvalue} onChange={updateValue} placeholder='Veuillez saisir un montant' className='form_inputArea'/>
+            </label>
         </>
     )
 }

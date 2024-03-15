@@ -4,12 +4,13 @@ const Select = () => {
     const [state, dispatch] = useSpentContext();
 
     const update = (e) => {
-        dispatch({type: 'updateCat', payload: e.target.value})
+        if (e.target.value !== '') dispatch({type: 'updateCat', payload: e.target.value})
     }
 
     return (
         <>
             <select name={'select'} value={state.inputcat} onChange={update}>
+                <option value={''}>Choix de la catégorie</option>
                 <option value={'alim'}>Alimentation</option>
                 <option value={'loge'}>Logement</option>
                 <option value={'trans'}>Transport</option>

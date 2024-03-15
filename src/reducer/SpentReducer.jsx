@@ -1,8 +1,9 @@
 export const init = {
     inputvalue: '',
-    inputcat: 'alim',
+    inputcat: '',
     entry: [],
     total: 0,
+    error: '',
 }
 
 const SpentReducer = (state, action) => {
@@ -11,11 +12,13 @@ const SpentReducer = (state, action) => {
         case 'updateValue': return {
             ...state,
             inputvalue: action.payload,
+            error: ''
         }
 
         case 'updateCat': return {
             ...state,
             inputcat: action.payload,
+            error: ''
         }
 
         case 'addSpent': return {
@@ -23,6 +26,11 @@ const SpentReducer = (state, action) => {
             entry: [...state.entry, {value: state.inputvalue + '€', cat: state.inputcat}],
             total: state.total + parseFloat(state.inputvalue),
             inputvalue: '',
+        }
+
+        case 'setError': return {
+            ...state,
+            error: action.payload
         }
 
         default: return state

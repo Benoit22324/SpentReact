@@ -5,6 +5,7 @@ const Input = () => {
 
     const updateValue = (e) => {
         if (!isNaN(parseFloat(e.target.value))) dispatch({type: 'updateValue', payload: e.target.value})
+        else dispatch({type: 'setError', payload: 'Veuillez entrer un chiffre'})
     }
 
     return (

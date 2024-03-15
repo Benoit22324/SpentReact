@@ -9,16 +9,16 @@ const HistoryCat = () => {
 
     return (
         <>
-            <label>Trié par :
+            <label className="history_catselector">Trié par :
                 <select name={'cathistory'} value={state.hcat} onChange={update} className="form_selectButton">
                     <option value={''}>Tout</option>
-                    <option value={'alim'}>Alimentation</option>
-                    <option value={'loge'}>Logement</option>
-                    <option value={'trans'}>Transport</option>
-                    <option value={'div'}>Divertissement</option>
-                    <option value={'san'}>Santé</option>
-                    <option value={'edu'}>Éducation</option>
-                    <option value={'other'}>Autres</option>
+                    <option value={'Alimentation'}>Alimentation</option>
+                    <option value={'Logement'}>Logement</option>
+                    <option value={'Transport'}>Transport</option>
+                    <option value={'Divertissement'}>Divertissement</option>
+                    <option value={'Santé'}>Santé</option>
+                    <option value={'Éducation'}>Éducation</option>
+                    <option value={'Autres'}>Autres</option>
                 </select>
             </label>
         </>

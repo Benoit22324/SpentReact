@@ -4,7 +4,9 @@ const Input = () => {
     const [state, dispatch] = useSpentContext();
 
     const updateValue = (e) => {
-        if (e.target.value.match('^[0-9]*$')) dispatch({type: 'updateValue', payload: e.target.value})
+        const entered = e.target.value.split('')
+        if (entered[entered.length - 1].match('^[0-9]*$')) dispatch({type: 'updateValue', payload: e.target.value})
+        else if (e.target.value.includes('.') && !state.inputvalue.includes('.')) dispatch({type: 'updateValue', payload: e.target.value})
         else dispatch({type: 'setError', payload: 'Veuillez entrer un chiffre'})
     }
 

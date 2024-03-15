@@ -5,8 +5,8 @@
 
 .app {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   margin: auto;
 }
 
@@ -57,6 +57,9 @@ background-color: rgb(68, 180, 255);
 .history {
   margin: 1.2em;
 }
+.history h2 {
+  text-decoration: underline;
+}
 .history_table {
   border-collapse: collapse;
   margin-top: 1em;
@@ -74,4 +77,13 @@ background-color: rgb(68, 180, 255);
 }
 .history_table_tot td:first-child {
   font-weight: bold;
+}
+.history_catselector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0.5em;
 }

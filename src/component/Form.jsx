@@ -8,15 +8,17 @@ const Form = () => {
 
     return (
         <>
-            {
-                state.error !== '' && <p className="error">{state.error}</p>
-            }
-            <div className="formSection">
-                <h2>Ajouter une dépense</h2>
-                <div className="form">
-                    <Input />
-                    <Select />
-                    <Submit />
+            <div>
+                {
+                    state.error !== '' && <p className="error">{state.error}</p>
+                }
+                <div className="formSection">
+                    <h2>Ajouter une dépense</h2>
+                    <div className="form">
+                        <Input />
+                        <Select />
+                        <Submit />
+                    </div>
                 </div>
             </div>
         </>

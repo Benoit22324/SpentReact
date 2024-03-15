@@ -4,7 +4,7 @@ const Input = () => {
     const [state, dispatch] = useSpentContext();
 
     const updateValue = (e) => {
-        if (!isNaN(parseFloat(e.target.value))) dispatch({type: 'updateValue', payload: e.target.value})
+        if (e.target.value.match('^[0-9]*$')) dispatch({type: 'updateValue', payload: e.target.value})
         else dispatch({type: 'setError', payload: 'Veuillez entrer un chiffre'})
     }
 
